@@ -1,0 +1,112 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" routerLink="">NWA Cricket</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+    aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed">
+  <!-- <div class="collapse navbar-collapse" id="navbarColor01" [collapse]="isCollapsed"> -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <div class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Teams
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="players/2017/16">Players</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="teams">Teams</a>
+            </li>
+          </ul>
+        </div>
+
+      </li>
+      <li class="nav-item dropdown">
+        <div class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            T16-2017
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="rounds/2017/16">Round</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="scorecards/2017/16">Scorecards</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="points/2017/16">Points Table</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="statistics/2017/16">Statistics</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="livescores/2017/16">All Live Scores</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <div class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            T10-2017
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="rounds/2017/10">Round</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="scorecards/2017/10">Scorecards</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="points/2017/10">Points Table</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="statistics/2017/10">Statistics</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="livescores/2017/10">All Live Scores</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <div class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            Schedule
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="schedule/2017/10">T10</a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="schedule/2017/16">T16</a>
+            </li>
+
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="grounds">Grounds</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="sponsors">Sponsors</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- <ul style="display: none; opacity: 0;">
+    <li class="first"><li class="arrow first"></li><a href="/Home/Round">Round</a></li>
+    <li><a href="/Home/PointsTable">Points Table</a></li>
+    <li><a href="/Home/Results">Scorecards</a></li>
+    <li><a href="/Home/Stats">Statistics</a></li>
+    <li class="last"><a href="/Home/LiveScores">All Live Scores</a></li>
+</ul> -->
