@@ -31,6 +31,20 @@ export class TournamentsDataService {
                             }
                         }
                     ]
+                },
+                {
+                    'year': '2018',
+                    'tournaments': [
+                        {
+                            'type': '16',
+                            'details': {
+                                'organizationId': '1091',
+                                'competitionId': '12135',
+                                'clubId': '216136',
+                                'drawId': '38518'
+                            }
+                        }
+                    ]
                 }
             ]
         };

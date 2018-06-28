@@ -6,7 +6,7 @@
   </button>
 
   <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed">
-  <!-- <div class="collapse navbar-collapse" id="navbarColor01" [collapse]="isCollapsed"> -->
+    <!-- <div class="collapse navbar-collapse" id="navbarColor01" [collapse]="isCollapsed"> -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <div class="btn-group" dropdown>
@@ -16,7 +16,7 @@
           </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="players/2017/16">Players</a>
+              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'players'">Players</a>
             </li>
             <li role="menuitem">
               <a class="dropdown-item" routerLink="teams">Teams</a>
@@ -28,53 +28,53 @@
       <li class="nav-item dropdown">
         <div class="btn-group" dropdown>
           <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            T16-2017
+           {{tour1Label}}
             <span class="caret"></span>
           </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="rounds/2017/16">Round</a>
+              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'rounds'">Round</a>
             </li>
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="scorecards/2017/16">Scorecards</a>
+              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'scorecards'">Scorecards</a>
             </li>
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="points/2017/16">Points Table</a>
+              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'points'">Points Table</a>
             </li>
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="statistics/2017/16">Statistics</a>
+              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'statistics'">Statistics</a>
             </li>
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="livescores/2017/16">All Live Scores</a>
+              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'livescores'">All Live Scores</a>
             </li>
           </ul>
         </div>
       </li>
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <div class="btn-group" dropdown>
           <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            T10-2017
+            {{tour2Label}}
             <span class="caret"></span>
           </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="rounds/2017/10">Round</a>
+              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'rounds'">Round</a>
             </li>
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="scorecards/2017/10">Scorecards</a>
+              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'scorecards'">Scorecards</a>
             </li>
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="points/2017/10">Points Table</a>
+              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'points'">Points Table</a>
             </li>
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="statistics/2017/10">Statistics</a>
+              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'statistics'">Statistics</a>
             </li>
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="livescores/2017/10">All Live Scores</a>
+              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'livescores'">All Live Scores</a>
             </li>
           </ul>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item dropdown">
         <div class="btn-group" dropdown>
           <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
@@ -82,11 +82,11 @@
             <span class="caret"></span>
           </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <!-- <li role="menuitem">
+              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'schedule'">T10</a>
+            </li> -->
             <li role="menuitem">
-              <a class="dropdown-item" routerLink="schedule/2017/10">T10</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" routerLink="schedule/2017/16">T16</a>
+              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'schedule'">T16</a>
             </li>
 
             <li class="divider dropdown-divider"></li>

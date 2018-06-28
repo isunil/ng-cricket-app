@@ -26,6 +26,7 @@ import { GroundsComponent } from './components/grounds/grounds.component';
 import { SponsorsComponent } from './components/sponsors/sponsors.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { CombineUrlPipe } from './pipes/combine-url.pipe';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     GroundsComponent,
     SponsorsComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    CombineUrlPipe
   ],
   imports: [
     routes,

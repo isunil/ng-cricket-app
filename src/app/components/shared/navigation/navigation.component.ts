@@ -12,6 +12,11 @@ import { Subscription } from 'rxjs/Subscription';
 export class NavigationComponent implements OnDestroy {
   public isCollapsed: Boolean = true;
   private subscription: Subscription;
+  public tour1 = '2018/16';
+  public tour1Label = 'T16-2018';
+  public tour2 = '2018/10';
+  public tour2Label = 'T10-2018';
+
 
   constructor(private router: Router) {
     this.subscription = this.router.events.subscribe(s => {

@@ -34,6 +34,17 @@ export class TournamentService {
     );
   }
 
+  getAllTournamentData(): Observable<TournamentDetails[]> {
+
+    return this.tournamentData.getTournamentData().map(
+      resp => {
+        const data = JSON.parse(resp);
+        const detailByYear = data.tournaments;
+        return detailByYear;
+      }
+    );
+  }
+
   // getTournamentData(year: string, gameType: string) {
   //   this.getData().subscribe(
   //     res => {

@@ -30,7 +30,7 @@ export class PointsComponent implements OnInit {
       res => {
         this.details = res;
         const url = 'https://www.crichq.com/plugins/base?width=850&height=700&border=1#competitions/' +
-          this.details.competitionId + '/draws/' + this.details.drawId + '/standings_table"';
+          this.details.competitionId + '/draws/' + this.details.drawId + '/standings_table/pool/1"';
 
         this.urlPath = url;
       });
