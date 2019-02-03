@@ -43,7 +43,16 @@ export class TournamentsDataService {
                                 'clubId': '216136',
                                 'drawId': '38518'
                             }
-                        }
+                        },
+                        {
+                          'type': '10',
+                          'details': {
+                              'organizationId': '1091',
+                              'competitionId': '12351',
+                              'clubId': '216136',
+                              'drawId': '39296'
+                          }
+                      }
                     ]
                 }
             ]

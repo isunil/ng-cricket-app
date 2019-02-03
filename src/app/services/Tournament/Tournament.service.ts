@@ -16,13 +16,6 @@ export class TournamentService {
     return this.tournamentData.getTournamentData().map(
       resp => {
         const data = JSON.parse(resp);
-
-        // return data.tournaments
-        //   .filter((item) => item.year === year).map(detailByYearAndGameType => {
-        //     return detailByYearAndGameType.tournaments
-        //       .find((item) => item.type === gameType).details;
-        //   });
-
         const detailByYear = data.tournaments
           .filter((item) => item.year === year);
 
@@ -30,6 +23,35 @@ export class TournamentService {
           .filter((item) => item.type === gameType);
 
         return detailByYearAndGameType[0].details;
+      }
+    );
+  }
+
+  getTournamentYears(): Observable<number[]> {
+
+    return this.tournamentData.getTournamentData().map(
+      resp => {
+        const data = JSON.parse(resp);
+
+        const allYears = data.tournaments
+          .map((item: { year: string; }) => parseInt(item.year));
+
+        return allYears.sort(function(a: number, b: number){return b-a});
+      }
+    );
+  }
+
+  getTournamentDataByYear(year: string): Observable<string[]> {
+
+    return this.tournamentData.getTournamentData().map(
+      resp => {
+        const data = JSON.parse(resp);
+        const detailByYear = data.tournaments
+          .filter((item) => item.year === year.toString());
+
+        const detailByYearAndGameType = detailByYear[0].tournaments
+          .map((item) => item.type);
+        return detailByYearAndGameType;;
       }
     );
   }

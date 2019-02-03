@@ -6,7 +6,6 @@
   </button>
 
   <div id="navbar" class="navbar-collapse collapse" [collapse]="isCollapsed">
-    <!-- <div class="collapse navbar-collapse" id="navbarColor01" [collapse]="isCollapsed"> -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <div class="btn-group" dropdown>
@@ -16,65 +15,41 @@
           </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
             <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'players'">Players</a>
+              <a class="dropdown-item" [routerLink]="tourDetails[0].urlFragment | combineUrl:'players'">Players</a>
             </li>
             <li role="menuitem">
               <a class="dropdown-item" routerLink="teams">Teams</a>
             </li>
           </ul>
         </div>
-
       </li>
-      <li class="nav-item dropdown">
-        <div class="btn-group" dropdown>
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-           {{tour1Label}}
-            <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'rounds'">Round</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'scorecards'">Scorecards</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'points'">Points Table</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'statistics'">Statistics</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'livescores'">All Live Scores</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <!-- <li class="nav-item dropdown">
-        <div class="btn-group" dropdown>
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-            {{tour2Label}}
-            <span class="caret"></span>
-          </button>
-          <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'rounds'">Round</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'scorecards'">Scorecards</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'points'">Points Table</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'statistics'">Statistics</a>
-            </li>
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'livescores'">All Live Scores</a>
-            </li>
-          </ul>
-        </div>
-      </li> -->
+      <div *ngFor="let tour of tourDetails">
+        <li class="nav-item dropdown">
+          <div class="btn-group" dropdown>
+            <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+              {{tour.label}}
+              <span class="caret"></span>
+            </button>
+            <ul *dropdownMenu class="dropdown-menu" role="menu">
+              <li role="menuitem">
+                <a class="dropdown-item" [routerLink]="tour.urlFragment | combineUrl:'rounds'">Round</a>
+              </li>
+              <li role="menuitem">
+                <a class="dropdown-item" [routerLink]="tour.urlFragment | combineUrl:'scorecards'">Scorecards</a>
+              </li>
+              <li role="menuitem">
+                <a class="dropdown-item" [routerLink]="tour.urlFragment | combineUrl:'points'">Points Table</a>
+              </li>
+              <li role="menuitem">
+                <a class="dropdown-item" [routerLink]="tour.urlFragment | combineUrl:'statistics'">Statistics</a>
+              </li>
+              <li role="menuitem">
+                <a class="dropdown-item" [routerLink]="tour.urlFragment | combineUrl:'livescores'">All Live Scores</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </div>
       <li class="nav-item dropdown">
         <div class="btn-group" dropdown>
           <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
@@ -82,13 +57,9 @@
             <span class="caret"></span>
           </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
-            <!-- <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'schedule'">T10</a>
-            </li> -->
-            <li role="menuitem">
-              <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'schedule'">T16</a>
+            <li *ngFor="let tour of tourDetails" role="menuitem">
+              <a class="dropdown-item" [routerLink]="tour.urlFragment | combineUrl:'schedule'">{{tour.type}}</a>
             </li>
-
             <li class="divider dropdown-divider"></li>
             <li role="menuitem">
               <a class="dropdown-item" routerLink="grounds">Grounds</a>
@@ -101,7 +72,75 @@
       </li>
     </ul>
   </div>
+  <div class="navbar-collapse collapse dual-collapse2" [collapse]="isCollapsed">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <div class="btn-group" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+            {{selectedYear}}
+            <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li role="menuitem" *ngFor="let year of years" (click)="onSelect(year)">
+              <a class="dropdown-item" href="#">{{year}}</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
+
+<!-- <li class="nav-item dropdown">
+    <div class="btn-group" dropdown>
+      <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        {{tour1Label}}
+        <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'rounds'">Round</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'scorecards'">Scorecards</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'points'">Points Table</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'statistics'">Statistics</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour1 | combineUrl:'livescores'">All Live Scores</a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <li class="nav-item dropdown">
+    <div class="btn-group" dropdown>
+      <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        {{tour2Label}}
+        <span class="caret"></span>
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu">
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'rounds'">Round</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'scorecards'">Scorecards</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'points'">Points Table</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'statistics'">Statistics</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" [routerLink]="tour2 | combineUrl:'livescores'">All Live Scores</a>
+        </li>
+      </ul>
+    </div>
+  </li> -->
 
 <!-- <ul style="display: none; opacity: 0;">
     <li class="first"><li class="arrow first"></li><a href="/Home/Round">Round</a></li>
