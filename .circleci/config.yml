@@ -27,6 +27,7 @@ jobs:
             - v1-dependencies-
 
       - run: yarn install
+      - run: yarn install angular-cli@latest -g
 
       - save_cache:
           paths:
@@ -36,5 +37,5 @@ jobs:
       # run build
       - run: git config user.email "USER_EMAIL"
       - run: git config user.name "USER_NAME"
-      - run: ng build --prod
+      - run: npm run build
       - run: ngh
