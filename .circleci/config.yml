@@ -36,6 +36,5 @@ jobs:
       # run build
       - run: git config user.email "USER_EMAIL"
       - run: git config user.name "USER_NAME"
-      - run:
-          name: angular-build
-          command: yarn ng -- build --prod --aot --no-progress
+      - run: ng build --prod
+      - run: ngh

@@ -8,8 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "ng build --prod && ngh"
   },
+  "homepage": "https://isunil.github.io/ng-cricket-app",
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
