@@ -71,9 +71,9 @@ export class TournamentsDataService {
               'type': '10',
               'details': {
                   'organizationId': '1091',
-                  'competitionId': '13048',
+                  'competitionId': '13186',
                   'clubId': '216136',
-                  'drawId': '43582'
+                  'drawId': '44198'
               }
           }
           ]
