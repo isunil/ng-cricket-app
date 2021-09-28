@@ -70,12 +70,36 @@ export class TournamentsDataService {
             {
               'type': '10',
               'details': {
-                  'organizationId': '1091',
-                  'competitionId': '13186',
-                  'clubId': '216136',
-                  'drawId': '44198'
+                'organizationId': '1091',
+                'competitionId': '13186',
+                'clubId': '216136',
+                'drawId': '44198'
               }
-          }
+            }
+          ]
+        },
+        {
+          'year': '2021',
+          'tournaments': [
+            {
+              'type': '16',
+              'details': {
+                'organizationId': '1091',
+                'competitionId': '14353',
+                'clubId': '216136',
+                'drawId': '52098'
+              }
+            },
+            {
+              'type': '10',
+              'details': {
+                'organizationId': '1091',
+                'competitionId': '14441',
+                'clubId': '216136',
+                'drawId': '52580'
+              }
+            }
+
           ]
         }
       ]
@@ -87,4 +111,3 @@ export class TournamentsDataService {
     });
   }
 }
-
