@@ -101,6 +101,20 @@ export class TournamentsDataService {
             }
 
           ]
+        },
+        {
+          'year': '2022',
+          'tournaments': [
+            {
+              'type': '16',
+              'details': {
+                'organizationId': '1091',
+                'competitionId': '15062',
+                'clubId': '216136',
+                'drawId': '56710'
+              }
+            },
+          ]
         }
       ]
     };
