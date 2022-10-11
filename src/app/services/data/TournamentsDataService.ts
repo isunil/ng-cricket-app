@@ -114,6 +114,15 @@ export class TournamentsDataService {
                 'drawId': '56710'
               }
             },
+            {
+              'type': '10',
+              'details': {
+                'organizationId': '1091',
+                'competitionId': '15192',
+                'clubId': '216136',
+                'drawId': '57150'
+              }
+            }
           ]
         }
       ]
